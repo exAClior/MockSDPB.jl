@@ -4,7 +4,6 @@ using LinearAlgebra
 using JuMP
 
 # Write your package code here.
-include("Core.jl")
-include("Polynomial.jl")
+include("PMP/PMP.jl")
 
 end
