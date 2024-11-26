@@ -30,6 +30,9 @@ end
 	dr =  MockSDPB.PMP.DampedRational(constant, base, ArbFloat[])
 	@test MockSDPB.PMP.is_constant(dr) 
 
+	dr = MockSDPB.PMP.DampedRational(ArbFloat)
+	@test MockSDPB.PMP.eval(dr, one(ArbFloat), ArbFloat(1e-10)) ≈ one(ArbFloat) / ArbFloat(ℯ) 
+
 	@test MockSDPB.PMP.eval(dr, zero(ArbFloat), ArbFloat(1e-10)) ≈ constant 
 
 	dr = MockSDPB.PMP.DampedRational(constant, base, poles)
